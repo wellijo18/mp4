@@ -1,4 +1,8 @@
-export default function Header({ utitle }) {
+interface HeaderProps {
+    utitle: string;
+}
+
+export default function Header({ utitle }: HeaderProps) {
     return (
         <header style={{ backgroundColor: '#1a237e', color: 'white', padding: 'calc(1rem + 1vw)', borderBottom: '4px solid #0d47a1', textAlign: 'center' }}>
             <h1 style={{ fontSize: 'calc(1.5rem + 1vw)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>

@@ -1,6 +1,6 @@
-import Footer from "../components/footer.tsx"
-import Main from "../components/main.tsx"
-import Nav from "../components/nav.tsx"
+import Footer from "../components/footer.tsx";
+import Main from "../components/main.tsx";
+import Nav from "../components/nav.tsx";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
@@ -48,36 +48,35 @@ const ContactSection = styled.div`
         color: black;
         font-size: 16px;
     }
-
-    input:focus, textarea:focus {
-        outline: 2px solid rgb(31, 167, 216);
-        box-shadow: 0 0 3px rgba(31, 167, 216, 0.3);
-    }
+    
 `;
 
-export default function Contact(){
+export default function Contact() {
     const clearForm = () => {
-        document.getElementById("contactForm").reset();
+        const form = document.getElementById("contactForm") as HTMLFormElement | null;
+        if (form) {
+            form.reset();
+        }
     };
 
     return (
         <>
             <StyledDiv>
-                <Nav/>
+                <Nav />
                 <Main>
                     <ContactSection>
-                        <h2 className="page-title" style={{color: "#1a237e"}}>Contact</h2>
+                        <h2 className="page-title" style={{ color: "#1a237e" }}>Contact</h2>
                         <p id="contactp">If you have any questions or opportunities, feel free to reach out to me using the contact details below!</p>
                         <p><b>Address:</b> 18 Jonathan Lane, Malden, MA 02148</p>
                         <p><b>Email:</b> <a href="mailto:wellijo@bu.edu">wellijo@bu.edu</a></p>
                         <p><b>Phone:</b> <a href="tel:3392247790">339-224-7790</a></p>
                         <div id="reachout">
-                            <h2 style={{color: "#1a237e"}}>Reach Out</h2>
+                            <h2 style={{ color: "#1a237e" }}>Reach Out</h2>
                             <form id="contactForm">
-                                <label htmlFor="fullname">Full Name:</label><br/>
-                                <input type="text" id="fullname" name="fullname"/><br/><br/>
-                                <label htmlFor="message">Message:</label><br/>
-                                <textarea id="message" name="message" rows={4} cols={50}></textarea><br/><br/>
+                                <label htmlFor="fullname">Full Name:</label><br />
+                                <input type="text" id="fullname" name="fullname" /><br /><br />
+                                <label htmlFor="message">Message:</label><br />
+                                <textarea id="message" name="message" rows={4} cols={50}></textarea><br /><br />
                                 <button type="button" onClick={clearForm}>Submit</button>
                             </form>
                         </div>
@@ -89,7 +88,7 @@ export default function Contact(){
                     </ContactSection>
                 </Main>
             </StyledDiv>
-            <Footer/>
+            <Footer />
         </>
     );
 }
