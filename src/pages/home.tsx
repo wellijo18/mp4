@@ -1,11 +1,10 @@
-import Header from "../components/header.tsx"
 import Footer from "../components/footer.tsx"
 import Main from "../components/main.tsx"
 import Nav from "../components/nav.tsx"
 import styled from "styled-components";
 import welli from "../assets/welli.png";
 
-const ContentWrapper = styled.div`
+const StyledDiv = styled.div`
     display: flex;
 
     @media (min-width: 750px) {
@@ -24,13 +23,13 @@ const PageTitle = styled.h2`
 export default function Home() {
     return (
         <>
-            <ContentWrapper>
+            <StyledDiv>
                 <Nav/>
                 <Main>
                     <div>
                         <PageTitle style={{color:"#1a237e"}}>Home</PageTitle>
                         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "20px", marginTop: "20px" }}>
-                            <img src={welli} alt="Photo of author Wellington Oliveira" style={{ width: "15%", maxWidth: "250px", height: "auto", borderRadius: "10px" }} alt="Wellington Oliveira" />
+                            <img src={welli} alt="Photo of author Wellington Oliveira" style={{ width: "15%", maxWidth: "250px", height: "auto", borderRadius: "10px" }} />
                             <p style={{ textAlign: "center", width: "40vw", color: "black"}}>
                                 Hello! My name is Wellington Oliveira. I am currently a senior at Boston University majoring in computer science. I currently work part-time at Apple retail but am looking for a developer role.
                                 I love everything and anything to do with technology and hope to create my own products! I love gaming, going to the gym, outdoors, and collecting Pokémon cards.
@@ -44,7 +43,7 @@ export default function Home() {
                         </p>
                     </div>
                 </Main>
-            </ContentWrapper>
+            </StyledDiv>
             <Footer/>
         </>
     );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCalculator } from "../hooks/useCalculator";
 import brazil from "../assets/brazil.jpg";
 import styled from "styled-components";
 
@@ -96,71 +96,29 @@ const Button = styled.button`
 `;
 
 export default function Calculator() {
-    const [n1, setN1] = useState("");
-    const [n2, setN2] = useState("");
-    const [output, setOutput] = useState("");
+    const { num1, setNum1, num2, setNum2, output, daOper, reset } = useCalculator();
 
-    const showRes = (res: number | string) => setOutput(res.toString());
-
-    const handleOperation = (operation: string) => {
-        const num1 = parseFloat(n1);
-        const num2 = parseFloat(n2);
-        if (isNaN(num1) || isNaN(num2)) return showRes("Only numbers");
-
-        switch (operation) {
-            case "multiply":
-                showRes(num1 * num2);
-                break;
-            case "divide":
-                if (num2 === 0) return showRes("Second value can't be zero");
-                showRes(num1 / num2);
-                break;
-            case "add":
-                showRes(num1 + num2);
-                break;
-            case "subtract":
-                showRes(num1 - num2);
-                break;
-            case "power":
-                showRes(Math.pow(num1, num2));
-                break;
-            default:
-                break;
-        }
-    };
-
-    const reset = () => {
-        setN1("");
-        setN2("");
-        showRes("");
-    };
+    let outputColor = "black";
+    if (output.startsWith("-")) {
+        outputColor = "red";
+    }
 
     return (
         <CalculatorContainer>
             <Title>Brazilian Calculator</Title>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%", maxWidth: "300px" }}>
-                <Input
-                    type="number"
-                    value={n1}
-                    onChange={(e) => setN1(e.target.value)}
-                    placeholder="Enter 1st Number"
-                />
-                <Input
-                    type="number"
-                    value={n2}
-                    onChange={(e) => setN2(e.target.value)}
-                    placeholder="Enter 2nd Number"
-                />
+                <Input type="number" value={num1} onChange={(e) => setNum1(e.target.value)} placeholder="1st Number"/>
+                <Input type="number" value={num2} onChange={(e) => setNum2(e.target.value)} placeholder="2nd Number"/>
             </div>
             <ButtonContainer>
-                <Button onClick={() => handleOperation("multiply")}>×</Button>
-                <Button onClick={() => handleOperation("divide")}>÷</Button>
-                <Button onClick={() => handleOperation("add")}>+</Button>
-                <Button onClick={() => handleOperation("subtract")}>−</Button>
-                <Button onClick={() => handleOperation("power")}>^</Button>
+                <Button onClick={() => daOper("multiply")}>×</Button>
+                <Button onClick={() => daOper("divide")}>÷</Button>
+                <Button onClick={() => daOper("add")}>+</Button>
+                <Button onClick={() => daOper("subtract")}>−</Button>
+                <Button onClick={() => daOper("power")}>^</Button>
                 <Button onClick={reset}>Reset</Button>
             </ButtonContainer>
-            <OutputBox style={{ color: output.startsWith("-") ? "red" : "black" }}>
+            <OutputBox style={{ color: outputColor }}>
                 {output}
             </OutputBox>
         </CalculatorContainer>

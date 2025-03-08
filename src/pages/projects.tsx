@@ -1,11 +1,10 @@
-import Header from "../components/header.tsx"
 import Footer from "../components/footer.tsx"
 import Main from "../components/main.tsx"
 import Nav from "../components/nav.tsx"
 import styled from "styled-components";
 import Calculator from "../components/calculator.tsx";
 
-const ContentWrapper = styled.div`
+const StyledDiv = styled.div`
     display: flex;
 
     @media (min-width: 750px) {
@@ -20,7 +19,7 @@ const ContentWrapper = styled.div`
 export default function Projects(){
     return (
         <>
-            <ContentWrapper>
+            <StyledDiv>
                 <Nav/>
                 <Main>
                     <div style={{marginBottom: "2rem", fontFamily: "'Roboto', sans-serif", lineHeight: "1.6", padding: "calc(1rem + 1vw)"}}>
@@ -46,7 +45,7 @@ export default function Projects(){
                     </div>
                     <Calculator/>
                 </Main>
-            </ContentWrapper>
+            </StyledDiv>
             <Footer/>
         </>
     );

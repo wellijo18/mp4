@@ -1,4 +1,3 @@
-import Header from "../components/header.tsx"
 import Footer from "../components/footer.tsx"
 import Main from "../components/main.tsx"
 import Nav from "../components/nav.tsx"
@@ -11,7 +10,7 @@ import javapic from "../assets/java.png"
 import pythonpic from "../assets/python.jpg"
 
 
-const ContentWrapper = styled.div`
+const StyledDiv = styled.div`
     display: flex;
 
     @media (min-width: 750px) {
@@ -23,7 +22,7 @@ const ContentWrapper = styled.div`
     }
 `;
 
-const LogosContainer = styled.div`
+const Logos = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -40,7 +39,7 @@ const StyledImg = styled.img`
 export default function Education(){
     return (
         <>
-            <ContentWrapper>
+            <StyledDiv>
                 <Nav/>
                 <Main>
                     <div style={{marginBottom: "2rem", fontFamily: "'Roboto', sans-serif", lineHeight: "1.6", padding: "calc(1rem + 1vw)"}}>
@@ -61,19 +60,19 @@ export default function Education(){
 
                         <div className="languages-con" style={{paddingLeft: "15px", marginBottom: "20px"}}>
                             <div className="languages-content" style={{paddingLeft: "15px", marginBottom: "20px", paddingTop: "10px", paddingBottom: "10px", color: "black"}}>
-                                <LogosContainer>
+                                <Logos>
                                     <StyledImg src={pythonpic} alt="python logo" />
                                     <StyledImg src={javapic} alt="java logo" />
                                     <StyledImg src={cpic} alt="c logo" />
                                     <StyledImg src={htmlpic} alt="html logo" />
                                     <StyledImg src={csspic} alt="css logo" />
                                     <StyledImg src={jspic} alt="javascript logo" />
-                                </LogosContainer>
+                                </Logos>
                             </div>
                         </div>
                     </div>
                 </Main>
-            </ContentWrapper>
+            </StyledDiv>
             <Footer/>
         </>
     );

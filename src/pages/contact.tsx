@@ -1,10 +1,9 @@
-import Header from "../components/header.tsx"
 import Footer from "../components/footer.tsx"
 import Main from "../components/main.tsx"
 import Nav from "../components/nav.tsx"
 import styled from "styled-components";
 
-const ContentWrapper = styled.div`
+const StyledDiv = styled.div`
     display: flex;
 
     @media (min-width: 750px) {
@@ -16,7 +15,7 @@ const ContentWrapper = styled.div`
     }
 `;
 
-const ContactContainer = styled.div`
+const ContactSection = styled.div`
     #contactp {
         margin-bottom: 20px;
     }
@@ -32,7 +31,7 @@ const ContactContainer = styled.div`
 
     button {
         padding: 8px 16px;
-        background-color: rgb(31, 167, 216);
+        background-color: #1a237e;
         color: white;
         border: none;
         border-radius: 4px;
@@ -63,17 +62,17 @@ export default function Contact(){
 
     return (
         <>
-            <ContentWrapper>
+            <StyledDiv>
                 <Nav/>
                 <Main>
-                    <ContactContainer>
-                        <h2 className="page-title">Contact</h2>
+                    <ContactSection>
+                        <h2 className="page-title" style={{color: "#1a237e"}}>Contact</h2>
                         <p id="contactp">If you have any questions or opportunities, feel free to reach out to me using the contact details below!</p>
                         <p><b>Address:</b> 18 Jonathan Lane, Malden, MA 02148</p>
                         <p><b>Email:</b> <a href="mailto:wellijo@bu.edu">wellijo@bu.edu</a></p>
                         <p><b>Phone:</b> <a href="tel:3392247790">339-224-7790</a></p>
                         <div id="reachout">
-                            <h2>Reach Out</h2>
+                            <h2 style={{color: "#1a237e"}}>Reach Out</h2>
                             <form id="contactForm">
                                 <label htmlFor="fullname">Full Name:</label><br/>
                                 <input type="text" id="fullname" name="fullname"/><br/><br/>
@@ -87,9 +86,9 @@ export default function Contact(){
                                 Feel free to contact me on LinkedIn as well! Thank you for your visit!
                             </p>
                         </div>
-                    </ContactContainer>
+                    </ContactSection>
                 </Main>
-            </ContentWrapper>
+            </StyledDiv>
             <Footer/>
         </>
     );

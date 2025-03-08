@@ -60,11 +60,11 @@ export default function Nav() {
         <StyledNav>
             <StyledUl>
                 <StyledLi><StyledLink to="/">Home</StyledLink></StyledLi>
-                <StyledLi><StyledLink to="/Education">Education</StyledLink></StyledLi>
-                <StyledLi><StyledLink to="/Employment">Employment</StyledLink></StyledLi>
-                <StyledLi><StyledLink to="/Contact">Contact</StyledLink></StyledLi>
-                <StyledLi><StyledLink to="/Projects">Projects</StyledLink></StyledLi>
-                <StyledLi><StyledLink to="/Activities">Activities</StyledLink></StyledLi>
+                <StyledLi><StyledLink to="/education">Education</StyledLink></StyledLi>
+                <StyledLi><StyledLink to="/employment">Employment</StyledLink></StyledLi>
+                <StyledLi><StyledLink to="/contact">Contact</StyledLink></StyledLi>
+                <StyledLi><StyledLink to="/projects">Projects</StyledLink></StyledLi>
+                <StyledLi><StyledLink to="/activities">Activities</StyledLink></StyledLi>
             </StyledUl>
         </StyledNav>
     );

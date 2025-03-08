@@ -1,4 +1,3 @@
-import Header from "../components/header.tsx"
 import Footer from "../components/footer.tsx"
 import Main from "../components/main.tsx"
 import Nav from "../components/nav.tsx"
@@ -6,7 +5,7 @@ import styled from "styled-components";
 import pokevid from "../assets/pokemon.mp4"
 import instavid from "../assets/insta.mp4"
 
-const ContentWrapper = styled.div`
+const StyledDiv = styled.div`
     display: flex;
 
     @media (min-width: 750px) {
@@ -18,54 +17,60 @@ const ContentWrapper = styled.div`
     }
 `;
 
-const ActivitiesContainer = styled.div`
-  .hobbies-title {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .activities-content {
-    border-left: 4px solid black;
-    padding-left: 15px; 
-    margin-bottom: 20px;
-  }
-  
-  #vid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    width: 100%;
-    padding: 1rem;
-  }
-  
-  video {
-    width: calc(16vw - 20px);
-    max-width: 800px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  @media (max-width: 750px) {
+const ActivitiesSection = styled.div`
+    .page-title,
+    .hobbies-title {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #1a237e; /* Title color */
+    }
+
+    .activities-content {
+        border-left: 4px solid #1a237e; /* Left bar color */
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .activities-content h3 {
+        color: #1a237e; /* Job/Activity name color */
+    }
+
     #vid {
-      flex-direction: column;
-      gap: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        width: 100%;
+        padding: 1rem;
     }
-    
+
     video {
-      width: 90%;
+        width: calc(16vw - 20px);
+        max-width: 800px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-  }
+
+    @media (max-width: 750px) {
+        #vid {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        video {
+            width: 90%;
+        }
+    }
 `;
 
 export default function Activities(){
     return (
         <>
-            <ContentWrapper>
+            <StyledDiv>
                 <Nav/>
                 <Main>
-                    <ActivitiesContainer>
+                    <ActivitiesSection>
                         <h2 className="page-title">Activities</h2>
 
                         <div className="activities-con">
@@ -91,9 +96,9 @@ export default function Activities(){
                                 <source src={pokevid} type="video/mp4" />
                             </video>
                         </div>
-                    </ActivitiesContainer>
+                    </ActivitiesSection>
                 </Main>
-            </ContentWrapper>
+            </StyledDiv>
             <Footer/>
         </>
     );

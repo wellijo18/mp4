@@ -1,10 +1,9 @@
-import Header from "../components/header.tsx"
 import Footer from "../components/footer.tsx"
 import Main from "../components/main.tsx"
 import Nav from "../components/nav.tsx"
 import styled from "styled-components";
 
-const ContentWrapper = styled.div`
+const StyledDiv = styled.div`
     display: flex;
 
     @media (min-width: 750px) {
@@ -16,35 +15,40 @@ const ContentWrapper = styled.div`
     }
 `;
 
-const EmploymentContainer = styled.div`
-  .employment-content {
-    border-left: 4px solid rgb(31, 167, 216);
-    padding-left: 15px; 
-    margin-bottom: 20px; 
-  }
-  
-  .employment-content ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .location-date {
-    font-style: italic;
-    margin-bottom: 10px;
-  }
-  
-  .page-title {
-    margin-bottom: 20px;
-  }
+const EmploymentSection = styled.div`
+    .employment-content {
+        border-left: 4px solid rgb(31, 167, 216);
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .employment-content ul {
+        list-style: disc;
+        padding-left: 18px;
+    }
+
+    .location-date {
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+
+    .page-title {
+        margin-bottom: 20px;
+        color: #1a237e; 
+    }
+
+    .employment-content h3 {
+        color: #1a237e;
+    }
 `;
 
 export default function Employment(){
     return (
         <>
-            <ContentWrapper>
+            <StyledDiv>
                 <Nav/>
                 <Main>
-                    <EmploymentContainer>
+                    <EmploymentSection>
                         <h2 className="page-title">Employment</h2>
 
                         <div className="employment-con">
@@ -81,9 +85,9 @@ export default function Employment(){
                                 </ul>
                             </div>
                         </div>
-                    </EmploymentContainer>
+                    </EmploymentSection>
                 </Main>
-            </ContentWrapper>
+            </StyledDiv>
             <Footer/>
         </>
     );
