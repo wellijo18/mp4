@@ -40,7 +40,7 @@ const StyledLink = styled(Link)`
 
     &:hover {
         background-color: #0d47a1;
-        color: #fff;
+        color: #ffcb05;
     }
 `;
 
